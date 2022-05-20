@@ -4,6 +4,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'King随笔',
   description: '随笔',
+  base:'/king-blog/',
   theme: defaultTheme({
     navbar: [
       {
