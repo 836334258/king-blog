@@ -4,7 +4,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'King随笔',
   description: '随笔',
-  base:'/king-blog/',
+  base: '/king-blog/',
   theme: defaultTheme({
     navbar: [
       {
@@ -25,6 +25,16 @@ export default defineUserConfig({
           {
             text: '前端零碎知识点',
             link: '/code/knowledge.md',
+          },
+        ],
+      },
+      {
+        text: '语法',
+        link: '/grammar',
+        children: [
+          {
+            text: 'Markdown语法记录',
+            link: '/grammar/markdown.md',
           },
         ],
       },
