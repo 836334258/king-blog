@@ -41,6 +41,10 @@ export default defineUserConfig({
             text: 'Typescript语法记录',
             link: '/grammar/typescript.md',
           },
+          {
+            text: 'Node语法记录',
+            link: '/grammar/node.md',
+          },
         ],
       },
     ],
