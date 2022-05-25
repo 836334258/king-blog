@@ -27,6 +27,10 @@ export default defineUserConfig({
             text: '前端零碎知识点',
             link: '/code/knowledge.md',
           },
+          {
+            text: '手写函数',
+            link: '/code/handCode.md',
+          },
         ],
       },
       {
