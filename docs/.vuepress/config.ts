@@ -36,6 +36,10 @@ export default defineUserConfig({
             text: 'Markdown语法记录',
             link: '/grammar/markdown.md',
           },
+          {
+            text: 'Typescript语法记录',
+            link: '/grammar/typescript.md',
+          },
         ],
       },
     ],
