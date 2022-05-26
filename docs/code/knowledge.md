@@ -30,7 +30,7 @@ date: '2022-5-20'
 
 12. `v-model="abc"`中`默认绑定的是 :modelValue="abc" @update:modelValue="abc=$event"` `v-model:title="pageTitle"表示为 :title="pageTitle" @update:title="pageTitle=$event"`
 
-13. ts中结尾!为非空断言，代表这个属性不能为空
+13. ts中结尾!为非空断言，代表这个属性不会为`null`或者`undefined`
 
 14. `function isFish(pet: Fish | Bird): pet is Fish {
   return (pet as Fish).swim !== undefined;

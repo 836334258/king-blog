@@ -31,6 +31,10 @@ export default defineUserConfig({
             text: '手写函数',
             link: '/code/handCode.md',
           },
+          {
+            text: 'letcode',
+            link: '/code/letcode.md',
+          },
         ],
       },
       {
