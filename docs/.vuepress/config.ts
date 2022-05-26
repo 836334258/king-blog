@@ -6,7 +6,11 @@ export default defineUserConfig({
   title: 'King随笔',
   description: '随笔',
   base: '/king-blog/',
+  head:[
+    ['link', { rel: 'icon', href: '/images/avatar.jpg' }]
+  ],
   theme: defaultTheme({
+    logo:'/images/avatar.jpg',
     navbar: [
       {
         text: '首页',
@@ -32,7 +36,7 @@ export default defineUserConfig({
             link: '/code/handCode.md',
           },
           {
-            text: 'letcode',
+            text: 'Letcode',
             link: '/code/letcode.md',
           },
         ],
