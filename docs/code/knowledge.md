@@ -76,6 +76,7 @@ type b=typeof MyArray[number]`  typeof number用于快速获取数组元素的�
     13. lint
     14. fs-extra fs替代包
     15. inquirer 常用交互式命令行用户界面的集合
+    16. http-server 快速启动一个http服务
 
 
 [TinyColor]: https://github.com/bgrins/TinyColor
