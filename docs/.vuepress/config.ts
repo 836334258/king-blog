@@ -39,6 +39,10 @@ export default defineUserConfig({
             text: 'Letcode',
             link: '/code/letcode.md',
           },
+          {
+            text: 'Css',
+            link: '/code/css.md',
+          },
         ],
       },
       {
