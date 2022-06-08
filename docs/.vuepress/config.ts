@@ -43,6 +43,10 @@ export default defineUserConfig({
             text: 'Css',
             link: '/code/css.md',
           },
+          {
+            text: 'Vue',
+            link: '/code/vue.md',
+          },
         ],
       },
       {
