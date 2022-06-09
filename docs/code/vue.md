@@ -58,3 +58,34 @@ date: '2022-6-7'
     * `isProxy()` 检查一个对象是否是由 reactive()、readonly()、shallowReactive() 或 shallowReadonly() 创建的代理。 原理：`return isReactive(value) || isReadonly(value);`
     * `isReactive()` 检查一个对象是否是由 reactive() 或 shallowReactive() 创建的代理。原理：` return !!(value && value["__v_isReactive"]);`
     * `isReadonly()` 检查一个对象是否是由 readonly() 或 shallowReadonly() 创建的代理。 原理：` return !!(value && value["__v_isReadonly"]);`
+    * `ref()`接受一个内部值，返回一个响应式的、可更改的 ref 对象
+    * `computed()` 接受一个 getter 函数，返回一个只读的响应式 ref 对象，即 getter 函数的返回值。它也可以接受一个带有 get 和 set 函数的对象来创建一个可写的 ref 对象。
+    * `reactive()` 返回一个对象的响应式代理。如果被包装的值是`ref`类型，该值的响应式也会保留，取值时不用`.value`，因为在调用`proxy`里面的`get`方法时  详见[reactive](https://staging-cn.vuejs.org/api/reactivity-core.html)
+      ```javascript
+      if (isRef(res)) {
+            // ref unwrapping - skip unwrap for Array + integer key.
+            return targetIsArray && isIntegerKey(key) ? res : res.value;
+        }
+      ``` 
+    * `readonly()` 接受一个对象 (不论是响应式还是一般的) 或是一个 ref，返回一个原值的只读代理。原理
+      ```javascript
+      const readonlyHandlers = {
+          get: readonlyGet,
+          set(target, key) {
+              if ((process.env.NODE_ENV !== 'production')) {
+                  warn(`Set operation on key "${String(key)}" failed: target is readonly.`, target);
+              }
+              return true;
+          },
+          deleteProperty(target, key) {
+              if ((process.env.NODE_ENV !== 'production')) {
+                  warn(`Delete operation on key "${String(key)}" failed: target is readonly.`, target);
+              }
+              return true;
+          }
+      };
+      ```    
+    * `watchEffect()` 立即运行一个函数，同时响应式地追踪其依赖，并在依赖更改时重新执行。
+    * `watchPostEffect()` watchEffect() 使用 flush: 'post' 选项时的别名。
+    * `watchSyncEffect()` watchEffect() 使用 flush: 'sync' 选项时的别名。
+    * `watch()` 侦听一个或多个响应式数据源，并在数据源变化时调用所给的回调函数。
