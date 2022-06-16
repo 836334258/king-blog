@@ -113,18 +113,14 @@ module.exports = function debounce(fn: TRest, timeout: number) {
 ```ts
 import { TRest } from './../index.d'
 module.exports = function throttle(fn: TRest, timeout: number) {
-  let timer: null | NodeJS.Timeout = null
-  let _this = this
-  let args = arguments
-  return function () {
-    if (timer) {
-      return
-    }
-    timer = setTimeout(() => {
-      fn.apply(_this, Array.from(args))
-      timer = null
-    }, timeout)
-  }
+    let prev = 0;
+    return function () {
+        let now = new Date();
+        if (now - prev > timeout) {
+            fn.apply(this, arguments);
+            prev = now;
+        }
+    };
 }
 ```
 

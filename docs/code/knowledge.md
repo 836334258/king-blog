@@ -77,6 +77,8 @@ type b=typeof MyArray[number]`  typeof number用于快速获取数组元素的�
     14. fs-extra fs替代包
     15. inquirer 常用交互式命令行用户界面的集合
     16. http-server 快速启动一个http服务
+    17. crypto-js 加密库
+    18. mirror-config-china 为中国内地的Node.js开发者准备的镜像配置，大大提高node模块安装速度
 
 
 [TinyColor]: https://github.com/bgrins/TinyColor

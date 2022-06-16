@@ -21,3 +21,28 @@ date: '2022-5-30'
 * `scroll-snap-type` 定义在滚动容器中的一个临时点（snap point）如何被严格的执行
   * `x mandatory` 只能显示一屏内容
 * `aspect-ratio` 为box容器规定期待的纵横比
+* 滚动栏设置样式
+  ```css
+  .new-header
+        .menu-search-wrapper
+        .search-input-box
+        .result-box::-webkit-scrollbar { 
+        width: 5px;
+        height: 8px;
+        border-radius: 10px;
+    }
+    .new-header
+        .menu-search-wrapper
+        .search-input-box
+        .result-box::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
+    .new-header
+        .menu-search-wrapper
+        .search-input-box
+        .result-box::-webkit-scrollbar-thumb {
+        background-color: #f5f5f5;
+        border-radius: 10px;
+    }
+  ```
+* 
