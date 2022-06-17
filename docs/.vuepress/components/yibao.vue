@@ -26,10 +26,12 @@ const getDateDiff = (startTime, endTime) => {
   return str
 }
 
-timer = setInterval(() => {
+setInterval(() => {
   const now = +new Date()
   const before = new Date('2022-4-5').getTime()
-  document?.querySelector('.date')?.innerHTML=getDateDiff(before, now)
+  if(document){
+    document.querySelector('.date').innerHTML=getDateDiff(before, now)
+  }
 }, 1000)
 </script>
 
