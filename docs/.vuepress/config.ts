@@ -9,7 +9,16 @@ export default defineUserConfig({
   base: '/king-blog/',
   head:[
     ['link', { rel: 'icon', href: '/images/avatar.jpg' }],
-    ['meta',{name:'baidu-site-verification','content':'code-4PMtPooKfF'}]
+    ['meta',{name:'baidu-site-verification','content':'code-4PMtPooKfF'}],
+    [
+      'script', {}, `
+      (function() {
+         if (location.href.indexOf('github.io') > -1 || location.href.indexOf('gitee.io') > -1) {
+             location.href = 'https://836334258.github.io/king-blog'
+         }
+      })();
+      `
+    ]
   ],
   theme: defaultTheme({
     logo:'/images/avatar.jpg',
