@@ -8,7 +8,8 @@ export default defineUserConfig({
   description: '随笔',
   base: '/king-blog/',
   head:[
-    ['link', { rel: 'icon', href: '/images/avatar.jpg' }]
+    ['link', { rel: 'icon', href: '/images/avatar.jpg' }],
+    ['meta',{name:'baidu-site-verification','content':'code-4PMtPooKfF'}]
   ],
   theme: defaultTheme({
     logo:'/images/avatar.jpg',
