@@ -1,5 +1,6 @@
 import { defaultTheme, defineUserConfig } from 'vuepress'
 import {searchPlugin} from '@vuepress/plugin-search'
+import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -72,6 +73,9 @@ export default defineUserConfig({
   plugins:[
     searchPlugin({
       
-    })
+    }),
+    sitemapPlugin({
+      hostname:'https://836334258.github.io/'
+    }),
   ]
 })
