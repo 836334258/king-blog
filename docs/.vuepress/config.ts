@@ -1,12 +1,11 @@
 import { defaultTheme, defineUserConfig } from 'vuepress'
 import {searchPlugin} from '@vuepress/plugin-search'
-import { sitemapPlugin } from "vuepress-plugin-sitemap2";
 
 export default defineUserConfig({
   lang: 'zh-CN',
   title: 'King随笔',
   description: '随笔',
-  base: '/king-blog/',
+  base: '/king-blog2/',
   head:[
     ['link', { rel: 'icon', href: '/images/avatar.jpg' }],
     ['meta',{name:'baidu-site-verification','content':'code-4PMtPooKfF'}]
