@@ -5,7 +5,7 @@ export default defineUserConfig({
   lang: 'zh-CN',
   title: 'King随笔',
   description: '随笔',
-  base: '/king-blog2/',
+  base: '/king-blog/',
   head:[
     ['link', { rel: 'icon', href: '/images/avatar.jpg' }],
     ['meta',{name:'baidu-site-verification','content':'code-4PMtPooKfF'}]

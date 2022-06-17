@@ -1,14 +1,13 @@
 <template>
   <div class="container">
+    <h1>给最爱的怡宝</h1>
     <h2>山月不知心底事，水风空落眼前花</h2>
-    <h4>{{ date }}</h4>
+    <h4 class="date"></h4>
   </div>
 </template>
 
-<script setup>
-import {ref} from 'vue'
-const timer = ref(null)
-let date = ref('')
+<script>
+let timer
 const getDateDiff = (startTime, endTime) => {
   //将日期字符串转换为时间戳
   var sTime = new Date(startTime).getTime() //开始时间
@@ -27,10 +26,10 @@ const getDateDiff = (startTime, endTime) => {
   return str
 }
 
-timer.value = setInterval(() => {
+timer = setInterval(() => {
   const now = +new Date()
   const before = new Date('2022-4-5').getTime()
-  date.value = getDateDiff(before, now)
+  document.querySelector('.date').innerHTML=getDateDiff(before, now)
 }, 1000)
 </script>
 
