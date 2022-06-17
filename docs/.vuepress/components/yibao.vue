@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 let timer
 const getDateDiff = (startTime, endTime) => {
   //将日期字符串转换为时间戳
