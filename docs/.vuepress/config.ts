@@ -13,7 +13,7 @@ export default defineUserConfig({
     [
       'script', {}, `
       (function() {
-         if (location.href.indexOf('github.io') > -1 || location.href.indexOf('gitee.io') > -1) {
+         if (location.href.includes('https://836334258.github.io/') {
              location.href = 'https://836334258.github.io/king-blog'
          }
       })();
