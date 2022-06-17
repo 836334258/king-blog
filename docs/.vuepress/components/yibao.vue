@@ -8,6 +8,7 @@
 
 <script setup>
 let timer
+let document
 const getDateDiff = (startTime, endTime) => {
   //将日期字符串转换为时间戳
   var sTime = new Date(startTime).getTime() //开始时间
