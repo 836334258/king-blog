@@ -35,6 +35,10 @@ export default defineUserConfig({
     sidebar: [
       '/README.md',
       {
+        text: 'YiBao',
+        link: '/yibao',
+      },
+      {
         text: 'Code',
         link: '/code',
         children: [
