@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h2>山月不知心底事，水风空落眼前花</h2>
-    <h3>很高兴认识你 <strong>怡宝</strong></h3>
     <h4>{{ date }}</h4>
   </div>
 </template>
