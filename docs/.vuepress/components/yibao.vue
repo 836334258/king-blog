@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="container">
     <h2>山月不知心底事，水风空落眼前花</h2>
     <h4>{{ date }}</h4>
@@ -44,4 +44,23 @@ timer.value = setInterval(() => {
     flex-direction: column;
  
   }
+</style> -->
+<template>
+  <div>
+
+  </div>
+</template>
+
+<script>
+export default {
+  setup () {
+    
+
+    return {}
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
 </style>
