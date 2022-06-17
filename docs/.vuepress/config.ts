@@ -9,16 +9,7 @@ export default defineUserConfig({
   base: '/king-blog/',
   head:[
     ['link', { rel: 'icon', href: '/images/avatar.jpg' }],
-    ['meta',{name:'baidu-site-verification','content':'code-4PMtPooKfF'}],
-    [
-      'script', {}, `
-      (function() {
-         if (location.href==='https://836334258.github.io/') {
-             location.href = 'https://836334258.github.io/king-blog'
-         }
-      })();
-      `
-    ]
+    ['meta',{name:'baidu-site-verification','content':'code-4PMtPooKfF'}]
   ],
   theme: defaultTheme({
     logo:'/images/avatar.jpg',
@@ -88,8 +79,8 @@ export default defineUserConfig({
     searchPlugin({
       
     }),
-    sitemapPlugin({
-      hostname:'https://836334258.github.io/'
-    }),
+    // sitemapPlugin({
+    //   hostname:'https://836334258.github.io/'
+    // }),
   ]
 })
