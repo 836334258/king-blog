@@ -49,6 +49,10 @@ export default defineUserConfig({
             link: '/code/css.md',
           },
           {
+            text: 'JavaScript',
+            link: '/code/js.md',
+          },
+          {
             text: 'Vue',
             link: '/code/vue.md',
           },

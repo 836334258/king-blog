@@ -8,8 +8,8 @@ date: '2022-5-20'
 
 `Typescript`在前端中运用的越来越广泛了，因此有必要去熟悉它的基本用法
 
-
 ### 基础
+
 - `tsconfig`中noImplicitAny表示当变量被自动推断出any时，会报出一个错误，strictNullChecks会让我们更加明确的处理`undefined`和`null`
 - 原始类型：`string`,`number`,`bool`
 - 数组`array`
@@ -38,5 +38,4 @@ date: '2022-5-20'
   - `ReturnType<Type>` 用于构造一个含有Type函数的返回值的类型
   - `ThisParameterType<Type>` 用于提取一个函数类型Type的this (opens new window)参数类型，返回unknown (opens new window)如果这个函数类型没有this参数。
   - `OmitThisParameter<Type>` 用于移除一个函数类型Type的this (opens new window)参数类型。如果Type没有明确的声明this 类型，那么这个返回的结果就是Type，不然的话，就返回一个新的函数类型，基于Type，但不再有this参数。
-  
   

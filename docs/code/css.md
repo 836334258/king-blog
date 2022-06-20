@@ -22,6 +22,7 @@ date: '2022-5-30'
   * `x mandatory` 只能显示一屏内容
 * `aspect-ratio` 为box容器规定期待的纵横比
 * 滚动栏设置样式
+
   ```css
   .new-header
         .menu-search-wrapper
@@ -45,4 +46,5 @@ date: '2022-5-30'
         border-radius: 10px;
     }
   ```
-* 
+
+*

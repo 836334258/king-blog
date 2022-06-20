@@ -36,7 +36,7 @@ date: '2022-5-20'
   return (pet as Fish).swim !== undefined;
 }` 类型谓词，任何时候isFish调用某个变量，如果原始类型兼容，TypeScript 就会将该变量缩小到该特定类型
 
-15. `  const MyArray = [
+15. `const MyArray = [
   { name: "Eve", age: 38 },
   { name: 12, age: 38 },
 ];
@@ -46,12 +46,12 @@ type b=typeof MyArray[number]`  typeof number用于快速获取数组元素的�
 17. `margin-left:auto` 可以让元素靠右边
 18. `git commit --amend --no-edit` 用上一次commit提交代码
 19. ts中的`omit`类型从另一个对象中剔除某些属性
-20. ` window.addEventListener('unhandledrejection')` 在promise reject的时候会调用
+20. `window.addEventListener('unhandledrejection')` 在promise reject的时候会调用
 21. `??` `?.`运算符是在左边操作数为null或者undefined时返回右侧操作数，与||不同的是0??1返回1
 22. HTML标准规定setimeOut的延迟不得低于4毫秒，低于这个值则会自动增加，dom变动通常不会立即执行，而是每隔16ms执行一次
 23. `clientX/clientY`是相对于窗口的坐标，`pageX/pageY`是相对于文档的坐标
 24. `a??b`运算符，只要a不等于`null/undefined`，就返回a，其余返回b，即`(a !== null && a !== undefined) ? a : b`
-25. 
+25.
 
 26. tsconfig
     1. **表示匹配嵌套到任何级别的目录，\*表示零个或多个字符，？匹配任何一个字符
@@ -79,6 +79,5 @@ type b=typeof MyArray[number]`  typeof number用于快速获取数组元素的�
     16. http-server 快速启动一个http服务
     17. crypto-js 加密库
     18. mirror-config-china 为中国内地的Node.js开发者准备的镜像配置，大大提高node模块安装速度
-
 
 [TinyColor]: https://github.com/bgrins/TinyColor
