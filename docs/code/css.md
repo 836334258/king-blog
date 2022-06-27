@@ -71,3 +71,10 @@ date: "2022-5-30"
     <div>New Arrival Pegboard</div>
   </div>
   ```
+  - 三角形
+  ```css
+  width: 0;
+  height: 0;
+  border: 11px solid;
+  border-color: transparent transparent #ffffff transparent;
+  ```
