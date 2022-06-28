@@ -24,6 +24,7 @@ date: "2022-5-30"
 - 滚动栏设置样式
 
   ```css
+  整个滚动条。
   .new-header
     .menu-search-wrapper
     .search-input-box
@@ -32,12 +33,14 @@ date: "2022-5-30"
     height: 8px;
     border-radius: 10px;
   }
+  滚动条轨道
   .new-header
     .menu-search-wrapper
     .search-input-box
     .result-box::-webkit-scrollbar-track {
     background-color: #fff;
   }
+  滚动条上的滚动滑块
   .new-header
     .menu-search-wrapper
     .search-input-box
@@ -45,6 +48,9 @@ date: "2022-5-30"
     background-color: #f5f5f5;
     border-radius: 10px;
   }
+  火狐兼容
+   scrollbar-color: #D9D9D9;
+  scrollbar-width: thin;
   ```
 
 - 分割线 divider
@@ -71,10 +77,27 @@ date: "2022-5-30"
     <div>New Arrival Pegboard</div>
   </div>
   ```
-  - 三角形
+- 三角形
   ```css
   width: 0;
   height: 0;
   border: 11px solid;
   border-color: transparent transparent #ffffff transparent;
+  ```
+- 文本溢出
+
+  ```css
+  .hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;（当文本溢出时，显示省略号）
+  }
+  .hidden {
+    -webkit-line-clamp: 2;（最多显示 2 行）
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   ```
