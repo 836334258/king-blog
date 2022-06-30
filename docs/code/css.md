@@ -54,6 +54,7 @@ date: "2022-5-30"
   ```
 
 - 分割线 divider
+
   ```html
   <style>
     .cart_summary_container .cart-ads .ad-intro {
@@ -72,11 +73,24 @@ date: "2022-5-30"
       padding: 0 5px;
       white-space: nowrap;
     }
+
+    <!-- 或者 -- > h1 {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1em;
+    }
+    h1::before,
+    h1::after {
+      content: "";
+      border-top: 0.1em double black;
+      align-self: center;
+    }
   </style>
   <div class="ad-intro">
     <div>New Arrival Pegboard</div>
   </div>
   ```
+
 - 三角形
   ```css
   width: 0;

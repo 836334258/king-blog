@@ -74,5 +74,150 @@ date: "2022-5-20"
     16. http-server 快速启动一个 http 服务
     17. crypto-js 加密库
     18. mirror-config-china 为中国内地的 Node.js 开发者准备的镜像配置，大大提高 node 模块安装速度
+27. webpack 常用 package
+
+    1. webpackbar 用于构建时显示进度条
+    2. ora Elegant terminal spinner
+    3. HappyPack 加快 webpack 构建速度
+    4. webpack-merge
+    5. html-webpack-plugin
+    6. webpack 构建流程![webpack构建流程](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e748c143c2474494989674e129daaa94~tplv-k3u1fbpfcp-zoom-in-crop-mark:3024:0:0:0.awebp)
+    7. webpack 基本配置
+
+    ```js
+    module.exports = {
+      context: pathConfig.basePath, // 基本路径
+      output: {
+        path: pathConfig.outputPath,
+        publicPath: pathConfig.publicPath,
+        filename: "assets/js/[name]-[contenthash].js",
+        chunkFilename: "assets/js/chunk-[name]-[contenthash].js",
+      },
+      resolve: {
+        alias: pathConfig.resolveAlias,
+        modules: pathConfig.resolveModules,
+        extensions: pathConfig.generateResolveExtensions([
+          ".web.tsx",
+          ".web.ts",
+          ".web.jsx",
+          ".web.js",
+          ".js",
+          ".mjs",
+          ".json",
+          ".jsx",
+          ".html",
+          ".ts",
+          ".tsx",
+          ".scss",
+          ".less",
+        ]),
+      },
+      module: {
+        rules: [
+          {
+            test: /\.jsx?$/,
+            use: "happypack/loader?id=babel",
+            include: pathConfig.babelIncludes,
+          },
+          {
+            test: /\.mjs$/,
+            include: /node_modules/,
+            type: "javascript/auto",
+          },
+          {
+            test: /\.less$/,
+            use: [
+              miniCssExtractLoader.loader,
+              cssLoaders.loader,
+              postcssLoaders.loader,
+              lessLoaders.loader,
+            ],
+          },
+          {
+            test: /(\.module\.scss$)/,
+            use: [
+              miniCssExtractLoader.loader,
+              cssLoaders.cssModuleLoader,
+              postcssLoaders.loader,
+              sassLoaders.loader,
+            ],
+          },
+          {
+            test: /\.scss$/,
+            exclude: /\.module\.scss$/,
+            use: [
+              miniCssExtractLoader.loader,
+              cssLoaders.loader,
+              postcssLoaders.loader,
+              sassLoaders.loader,
+            ],
+          },
+          {
+            test: /\.css$/,
+            use: [
+              miniCssExtractLoader.loader,
+              cssLoaders.loader,
+              postcssLoaders.loader,
+            ],
+          },
+          {
+            test: /\.tsx?$/,
+            include: pathConfig.babelIncludes,
+            use: ["happypack/loader?id=babel", tsLoaders.loader],
+          },
+          {
+            test: /\.(eot|woff|woff2|svg|ttf)([?]?.*)$/,
+            type: "asset/resource",
+            generator: {
+              filename: "assets/fonts/[hash][ext]",
+              publicPath: `${pathConfig.publicPath || ""}`,
+            },
+          },
+          {
+            test: /\.(png|jpg|jpeg|gif)$/,
+            type: "asset",
+            generator: {
+              filename: "assets/images/[hash][ext]", //文件名会变成这种格式
+              publicPath: `${pathConfig.publicPath || ""}`,
+            },
+            parser: {
+              dataUrlCondition: {
+                maxSize: 2048, // 小于2kb时会被压缩成dataurl
+              },
+            },
+          },
+        ],
+      },
+      plugins: [
+        pathConfig.EnvironmentPlugin(),
+        new webpack.ProvidePlugin({ process: "process/browser" }),
+        new MiniCssExtractPlugin({
+          filename: `assets/styles/[name]${
+            devMode ? "" : "-[contenthash]"
+          }.css`,
+          ignoreOrder: true,
+        }),
+        new CopyWebpackPlugin({
+          patterns: [
+            {
+              from: pathConfig.resolve("src/assets"),
+              to: pathConfig.resolve("public/assets"),
+              noErrorOnMissing: true,
+            },
+          ],
+        }),
+        new MomentLocalesPlugin({
+          localesToKeep: ["en"],
+        }),
+        new HappyPack({
+          // 加快构建速度
+          id: "babel",
+          verbose: false,
+          threadPool: happyThreadPool,
+          loaders: [babelLoaders.loader],
+        }),
+      ],
+    };
+    ```
 
 [tinycolor]: https://github.com/bgrins/TinyColor
