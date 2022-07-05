@@ -44,3 +44,29 @@ B.prototype = Object.create(A.prototype);
 ```
 
 ##### `Element.scrollIntoView()`滚动元素的父容器，使被调用 scrollIntoView() 的元素对用户可见。
+
+### js 吸顶效果
+
+```js
+let oDiv = document.querySelector("article .options");
+let oTop =
+  document.querySelector(".support__tabs--right").offsetTop +
+  oDiv.offsetTop +
+  document.querySelector(".content-block-title").offsetTop +
+  document.querySelector(".content-block-title").offsetHeight;
+let pHeight = document.querySelector(".page-header").offsetHeight;
+window.onscroll = function () {
+  //获取页面的滚动距离
+  let oheight = document.documentElement.scrollTop || document.body.scrollTop;
+  //滚动到一定位置 div固定到顶部 js实现吸顶
+  if (oTop < oheight) {
+    oDiv.style.position = "fixed";
+    oDiv.style.top = isMobile() ? 0 : pHeight + "px";
+    oDiv.style.marginTop = 0;
+  } else {
+    oDiv.style.position = "relative";
+    oDiv.style.top = 0;
+    oDiv.style.marginTop = "35px";
+  }
+};
+```
