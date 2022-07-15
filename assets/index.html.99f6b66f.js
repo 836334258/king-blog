@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-c3e5bd30","path":"/yibao/","title":"","lang":"zh-CN","frontmatter":{"layout":"YiBao"},"excerpt":"","headers":[],"git":{"updatedTime":1655450567000,"contributors":[{"name":"king","email":"836334258@qq.com","commits":1}]},"filePathRelative":"yibao/README.md"}');export{t as data};
