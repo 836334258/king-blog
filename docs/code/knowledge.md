@@ -44,10 +44,11 @@ date: "2022-5-20"
 21. `??` `?.`运算符是在左边操作数为 null 或者 undefined 时返回右侧操作数，与||不同的是 0??1 返回 1
 22. HTML 标准规定 setimeOut 的延迟不得低于 4 毫秒，低于这个值则会自动增加，dom 变动通常不会立即执行，而是每隔 16ms 执行一次
 23. `clientX/clientY`是相对于窗口的坐标，`pageX/pageY`是相对于文档的坐标
-24. `a??b`运算符，只要 a 不等于`null/undefined`，就返回 a，其余返回 b，即`(a !== null && a !== undefined) ? a : b`
+24. ~x 大致等同于 -(x+1)
+25. `a??b`运算符，只要 a 不等于`null/undefined`，就返回 a，其余返回 b，即`(a !== null && a !== undefined) ? a : b`
     25.LCP: 加载性能。最大内容绘制应在 2.5s 内完成。FID: 交互性能。首次输入延迟应在 100ms 内完成。CLS: 页面稳定性。累积布局偏移，需手动计算，CLS 应保持在 0.1 以下。
 
-25. tsconfig
+26. tsconfig
 
     1. \*\*表示匹配嵌套到任何级别的目录，\*表示零个或多个字符，？匹配任何一个字符
     2. allowUnreachableCode 允许无法访问的代码
@@ -55,7 +56,7 @@ date: "2022-5-20"
     4. alwaysStrict 永远严格
     5. noImplicitAny 没有任何隐含的
 
-26. 常用 package
+27. 常用 package
     1. husky
     2. rimraf
     3. cross-env
@@ -74,7 +75,7 @@ date: "2022-5-20"
     16. http-server 快速启动一个 http 服务
     17. crypto-js 加密库
     18. mirror-config-china 为中国内地的 Node.js 开发者准备的镜像配置，大大提高 node 模块安装速度
-27. webpack 常用 package
+28. webpack 常用 package
 
     1. webpackbar 用于构建时显示进度条
     2. ora Elegant terminal spinner

@@ -70,3 +70,26 @@ window.onscroll = function () {
   }
 };
 ```
+
+### copy
+
+```js
+const copyText = (txt) => {
+  return new Promise((resovle, reject) => {
+    if (navigator.clipboard) {
+      resove(navigator.clipboard.writeText(txt));
+    } else {
+      var input = document.createElement("input");
+      document.body.appendChild(input);
+      input.setAttribute("value", txt);
+      input.select();
+      document.execCommand("copy"); // 执行浏览器复制命令
+      if (document.execCommand("copy")) {
+        document.execCommand("copy");
+        resovle();
+      }
+      document.body.removeChild(input);
+    }
+  });
+};
+```
