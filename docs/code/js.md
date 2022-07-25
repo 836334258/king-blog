@@ -93,3 +93,36 @@ const copyText = (txt) => {
   });
 };
 ```
+
+### mutations observe
+
+```js
+const observeElement = (
+  el: HTMLElement,
+  callback: Function,
+  options: Object = {}
+) => {
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((m) => callback(m));
+  });
+  observer.observe(
+    el,
+    Object.assign(
+      {
+        childList: true,
+        attributes: true,
+        attributeOldValue: true,
+        characterData: true,
+        characterDataOldValue: true,
+        subtree: true,
+      },
+      options
+    )
+  );
+  return observer;
+};
+```
+
+### `getComputedStyle(element, [pseudoElt])` 获取当前元素的 style
+
+### `window.getSelection().toString()` 获取当前选定文本
