@@ -56,6 +56,10 @@ export default defineUserConfig({
             text: "Vue",
             link: "/code/vue.md",
           },
+          {
+            text: "JavaScript面试",
+            link: "/code/JavaScript面试精讲.md",
+          },
         ],
       },
       {

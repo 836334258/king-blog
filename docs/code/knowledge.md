@@ -76,6 +76,7 @@ date: "2022-5-20"
     17. crypto-js 加密库
     18. mirror-config-china 为中国内地的 Node.js 开发者准备的镜像配置，大大提高 node 模块安装速度
 28. webpack 常用 package
+29. pinia-plugin-persistedstate pinia 的持久化插件
 
     1. webpackbar 用于构建时显示进度条
     2. ora Elegant terminal spinner
