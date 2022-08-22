@@ -19,7 +19,7 @@
 
 引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。
 
-![](images/基本数据类型与引用类型.png)
+!(images/基本数据类型与引用类型.png)
 
 下面我们先来回顾基本数据类型的内容，后面再复习引用类型的内容，以及看一下对应的常见的面试题。
 
@@ -1381,11 +1381,11 @@ Person.prototype.sayName = function () {
 
 下面我们来看一下它们之间的关系。
 
-![](images/prototype.png)
+!(images/prototype.png)
 
 **简易图**
 
-![](images\简易prototype.png)
+!(images\简易 prototype.png)
 
 #### constructor 属性
 
@@ -1399,11 +1399,11 @@ console.log(Person.prototype.constructor == Person);
 
 下面我们来更新一下它们之间的关系图。
 
-![](images\constructor.png)
+!(images\constructor.png)
 
 **简易图**
 
-![](images\constructor.jpg)
+!(images\constructor.jpg)
 
 #### 对象的 `__proto__ `属性
 
@@ -1421,7 +1421,7 @@ console.log(student.__proto__ === Person.prototype); // true
 
 下面我们来看一下现在这几个对象之间的关系
 
-![](images/proto.png)
+!(images/proto.png)
 
 `isPrototypeOf()` 方法用于测试一个对象是否存在于另一个对象的原型链上。
 
@@ -1431,7 +1431,7 @@ console.log(Person.prototype.isPrototypeOf(student)); // true
 
 **简易图**
 
-![](images\proto.jpg)
+!(images\proto.jpg)
 
 ### 1.3 原型属性
 
@@ -1768,7 +1768,7 @@ Object.prototype.__proto__ === null;
 
 具体的图如下所示：
 
-![](images/原型链1.png)
+!(images/原型链 1.png)
 
 下面，我们再来看一个案例：
 
@@ -1785,11 +1785,11 @@ var suber = new Sub();
 
 对应的原型链如下图所示：
 
-![](images/原型链2.png)
+!(images/原型链 2.png)
 
 上面的图其实并不完整，因为漏掉了`Object`.所以完整的图如下
 
-![](images/原型链3.png)
+!(images/原型链 3.png)
 
 通过以上内容的讲解，我们对原型链有了更加深入的理解。
 
@@ -2947,7 +2947,7 @@ fn(); //zhangsan
 
 下面，我们再来看一个比较复杂的结构图，来体验一下作用域
 
-![](images/作用域.png)
+!(images/作用域.png)
 
 - 作用域链
 
@@ -2965,11 +2965,11 @@ fn(); //zhangsan
 
 如下图所示：
 
-![](images/作用域链.png)
+!(images/作用域链.png)
 
 对应的代码如下：
 
-![](images/作用域链2.png)
+!(images/作用域链 2.png)
 
 ### 面试中关于作用域与作用域链的问题
 
@@ -4680,7 +4680,7 @@ console.log(result);
 
 **原型对象**
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/constructor.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/constructor.png)
 
 在前面的课程中，我们讲解过原型对象，我们知道每个函数在创建的时候都会有一个`prototype`属性，它指向函数的原型对象。
 
@@ -4688,7 +4688,7 @@ console.log(result);
 
 同时在每个原型对象上都会增加一个`constructor`属性，该属性指向`prototype`属性所在的构造函数，如上图所示。
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/proto.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/proto.png)
 
 当我们通过`new`操作符创建一个实例的时候，该实例就有了一个`__proto__`属性，该属性指向了构造函数的原型对象，如上图所示：
 
@@ -4741,7 +4741,7 @@ console.log(Person.prototype.constructor); // Object
 
 如下图所示
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/原型对象重写.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/原型对象重写.png)
 
 而我们可以看到在字面量对象中有一个`__proto__`属性，指向了`Object`的原型对象,这时，只能去`Object`原型对象中查找是否有`constructor`属性，而`Object`原型对象中的`constructor`指向的还是`Object`.所以最终输出结果为`Object`.
 
@@ -4826,13 +4826,13 @@ doggie.eat("狗粮");
 
 下面，可以通过一张图来理解一下：
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/原型继承1.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/原型继承 1.png)
 
 原来的构造函数`Dog`的`prototype`指向的是`Dog`的原型对象，但是现在指向了`Animal`的实例对象。也就是说构造函数`Dog`的原型对象为`Animal`的实例对象。
 
 这样会出现什么样的效果呢？
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/原型继承2.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/原型继承 2.png)
 
 注意：上面我们所写的代码还是有一个小的问题的。
 
@@ -7093,7 +7093,7 @@ removeEventListener(eventName, handler, useCapture); // 删除事件处理程序
 
 其中`useCapture`如果为`true`表示支持事件捕获，为`false`b 表示支持事件冒泡，默认是为`false`
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/事件捕获与事件冒泡.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/事件捕获与事件冒泡.png)
 
 通过上面的介绍，我们知道了`DOM2`的事件处理程序存在两种情况，那这两种实现的方式之间有没有相同点和不同点呢？
 
@@ -7658,11 +7658,11 @@ Ajax 是一种异步请求数据的 web 开发技术，对于改善用户的体�
 
 下图是普通的请求方式
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/ajax1.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/ajax1.png)
 
 下图是`ajax`请求的方式
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/ajax2.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/ajax2.png)
 
 ## 2、AJAX 原理是什么
 
@@ -7678,7 +7678,7 @@ Ajax 的原理简单来说通过`XmlHttpRequest`对象来向服务器发送异�
 
 创建步骤：
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/AJAX创建过程.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/AJAX 创建过程.png)
 
 创建`xhr`对象
 
@@ -7834,7 +7834,7 @@ HTTP状态码(status)由三个十进制数字组成。HTTP状态码共分为5种
 
 如下表格所示：
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/跨域.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/跨域.png)
 
 从表中可以看出域名，子域名，端口号，协议不同都属于不同源，当脚本被认为是来至不同源时，均被浏览器拒绝请求。
 
@@ -8165,7 +8165,7 @@ console.log("last=", i);
 
 在循环体中输出的 i 的值还是 1--10,但是循环体外部打印 i 的值时出现了错误，错误如下：
 
-![](E:/D/博学谷/JavaScript面试精讲/讲义/images/let关键字.png)
+!(E:/D/博学谷/JavaScript 面试精讲/讲义/images/let 关键字.png)
 
 **出错的原因是：通过 let 声明的变量只在其对应的代码块中起作用，所谓的代码块我们可以理解成就是循环中的这一对大括号。**
 
