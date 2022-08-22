@@ -133,3 +133,153 @@ const observeElement = (
 - `afterbegin` 只在该元素当中，在该元素第一个子孩子前面
 - `beforeend` 只在该元素当中，在该元素最后一个子孩子后面
 - `afterend` 在该元素本身的后面
+
+### 弹窗
+
+```js
+class PopBox {
+  constructor(dom, content = "") {
+    this.dom = this.isString(dom) ? document.querySelector(dom) : dom;
+    this.popBoxShadow = document.createElement("div");
+    this.popBox = document.createElement("div");
+    this.popBoxText = document.createTextNode(content);
+    this.css = document.querySelector("style[title=locket-pop-box-css]")
+      ? null
+      : document.createElement("style");
+    this.dom.appendChild(this.popBoxShadow);
+    this.init();
+    this.addOpenListen();
+    this.addCloseListen();
+    this.addPopBoxShadowListen();
+  }
+  init() {
+    this.popBoxShadow.className = "locket-pop-box-shadow";
+    this.popBox.className = "locket-pop-box";
+    this.popBoxShadow.insertAdjacentElement("afterbegin", this.popBox);
+    const svgContent = `<svg class="locket-close"  style="width: 30px;height: 30px;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M504.224 470.288l207.84-207.84a16 16 0 0 1 22.608 0l11.328 11.328a16 16 0 0 1 0 22.624l-207.84 207.824 207.84 207.84a16 16 0 0 1 0 22.608l-11.328 11.328a16 16 0 0 1-22.624 0l-207.824-207.84-207.84 207.84a16 16 0 0 1-22.608 0l-11.328-11.328a16 16 0 0 1 0-22.624l207.84-207.824-207.84-207.84a16 16 0 0 1 0-22.608l11.328-11.328a16 16 0 0 1 22.624 0l207.824 207.84z" p-id="1540"></path></svg>`;
+    this.popBox.insertAdjacentHTML("afterbegin", svgContent);
+    this.popBox.insertAdjacentHTML("afterbegin", this.popBoxText.textContent);
+    this.initCss();
+  }
+  initCss() {
+    if (this.css) {
+      this.popBoxShadow.appendChild(this.css);
+      this.css.style.type = "text/css";
+      this.css.title = "locket-pop-box-css";
+      this.css.innerHTML = ` .locket-pop-box-shadow {
+                              position: fixed;
+                              top: 0;
+                              left: 0;
+                              width: 100%;
+                              height: 100%;
+                              display:none;
+                              background-color: rgba(0, 0, 0, .3);
+                            }
+
+                            .locket-pop-box {
+                              position: absolute;
+                              left: 50%;
+                              top: 50%;
+                              transform: translate(-50%, -50%);
+                              width: 50%;
+                              padding: 20px;
+                              min-height: 100px;
+                              background-color: #fff;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              animation: show .5s ease-in-out 0s;
+                              box-shadow: 0px 0px 10px #ccc;
+                              border-radius: 3px;
+                              font-size: 3vmin;
+                            }
+
+                            .locket-pop-box .locket-close {
+                              position: absolute;
+                              right: 15px;
+                              top: 15px;
+                              cursor: pointer;
+                            }
+
+                            .locket-pop-box.locket-pop-box-close {
+                              animation: close .5s ease-in-out 0s;
+                            }
+
+                            @keyframes show {
+                              from {
+                                transform: translate(-50%, -50%) scale(0);
+                              }
+
+                              to {
+                                transform: translate(-50%, -50%) scale(1);
+                              }
+                            }
+
+                            @keyframes close {
+                              from {
+                                transform: translate(-50%, -50%) scale(1);
+                              }
+
+                              to {
+                                transform: translate(-50%, -50%) scale(0);
+                              }
+                            }
+                            `;
+    }
+  }
+
+  addCloseListen() {
+    this.dom.querySelector(".locket-pop-box .locket-close").addEventListener(
+      "click",
+      (e) => {
+        e.stopPropagation();
+        this.close();
+      },
+      false
+    );
+  }
+  addOpenListen() {
+    this.dom.addEventListener(
+      "click",
+      (e) => {
+        e.stopPropagation();
+        this.open();
+      },
+      false
+    );
+  }
+  addPopBoxShadowListen() {
+    this.dom
+      .querySelector(".locket-pop-box-shadow")
+      .addEventListener("click", (e) => {
+        if (e.target.classList.contains("locket-pop-box-shadow")) {
+          this.close();
+        }
+      });
+  }
+  is(data) {
+    return Object.prototype.toString.call(data);
+  }
+  isString(data) {
+    return this.is(data) === "[object String]";
+  }
+  open() {
+    this.dom
+      .querySelector(".locket-pop-box-shadow")
+      .style.setProperty("display", "block");
+  }
+  close() {
+    const locketPopBox = this.dom.querySelector(
+      ".locket-pop-box .locket-close"
+    ).parentNode;
+    locketPopBox.classList.add("locket-pop-box-close");
+    const closeLocketPopBoxFunc = () => {
+      locketPopBox.classList.remove("locket-pop-box-close");
+      locketPopBox.parentNode.style.setProperty("display", "none");
+      locketPopBox.removeEventListener("animationend", closeLocketPopBoxFunc);
+    };
+    locketPopBox.addEventListener("animationend", closeLocketPopBoxFunc);
+  }
+}
+```
