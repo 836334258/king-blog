@@ -1,5 +1,4 @@
 import { defaultTheme, defineUserConfig } from "vuepress";
-import { searchPlugin } from "@vuepress/plugin-search";
 
 export default defineUserConfig({
   lang: "zh-CN",
@@ -24,10 +23,6 @@ export default defineUserConfig({
     ],
     sidebar: [
       "/README.md",
-      // {
-      //   text: 'YiBao',
-      //   link: '/yibao',
-      // },
       {
         text: "Code",
         link: "/code",
@@ -82,10 +77,4 @@ export default defineUserConfig({
       },
     ],
   }),
-  plugins: [
-    searchPlugin({}),
-    // sitemapPlugin({
-    //   hostname:'https://836334258.github.io/'
-    // }),
-  ],
 });
