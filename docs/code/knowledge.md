@@ -75,6 +75,7 @@ date: "2022-5-20"
     16. http-server 快速启动一个 http 服务
     17. crypto-js 加密库
     18. mirror-config-china 为中国内地的 Node.js 开发者准备的镜像配置，大大提高 node 模块安装速度
+    19. unplugin-vue-macros 可以在 vue3 的 setup 中定义 name
 28. webpack 常用 package
 29. pinia-plugin-persistedstate pinia 的持久化插件
 
