@@ -7,8 +7,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "prepare": "husky install",
-    "preinstall": "npx only-allow pnpm"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "husky": "^8.0.1",
@@ -18,7 +17,6 @@
   },
   "dependencies": {
     "@vuepress/client": "^2.0.0-beta.45",
-    "only-allow": "^1.1.1",
     "vue": "^3.2.37"
   },
   "lint-staged": {
