@@ -8,7 +8,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "prepare": "husky install",
-    "rebuild": "npx rimraf node_modules && npx rimraf yarn.lock && yarn --frozen-lockfile"
+    "rebuild": "npx rimraf node_modules && npx rimraf yarn.lock && yarn --frozen-lockfile",
+    "release": "sh release.sh"
   },
   "devDependencies": {
     "husky": "^8.0.1",
