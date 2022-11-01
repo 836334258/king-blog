@@ -7,13 +7,15 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "rebuild": "npx rimraf node_modules && npx rimraf yarn.lock && yarn"
   },
   "devDependencies": {
     "husky": "^8.0.1",
     "lint-staged": "^13.0.2",
     "prettier": "2.7.1",
-    "vuepress": "^2.0.0-beta.45"
+    "rimraf": "^3.0.2",
+    "vuepress": "^2.0.0-beta.53"
   },
   "dependencies": {
     "vue": "^3.2.37"
