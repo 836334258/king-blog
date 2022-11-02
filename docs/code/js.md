@@ -283,3 +283,40 @@ class PopBox {
   }
 }
 ```
+
+### ajax
+
+```js
+async function ajax(
+  url,
+  method = "POST",
+  data = {},
+  conTentType = "application/json;charset=utf-8"
+) {
+  let ret = "";
+  if (conTentType !== "application/json;charset=utf-8") {
+    for (let it in data) {
+      ret += encodeURIComponent(it) + "=" + encodeURIComponent(data[it]) + "&";
+    }
+    ret = ret.substring(0, ret.lastIndexOf("&"));
+  }
+  const config = {
+    method,
+    headers: {
+      "Content-Type": conTentType,
+    },
+    mode: "cors",
+    credentials: "include",
+  };
+  if (method === "POST") {
+    Object.assign(config, {
+      body:
+        conTentType === "application/json;charset=utf-8"
+          ? JSON.stringify(data)
+          : ret,
+    });
+  }
+  const response = await fetch(url, config);
+  return await response.json();
+}
+```
