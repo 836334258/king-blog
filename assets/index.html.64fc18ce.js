@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-146a1089","path":"/code/","title":"这里是关于代码的","lang":"zh-CN","frontmatter":{"title":"这里是关于代码的","author":"King","date":"2022-5-20"},"excerpt":"","headers":[],"git":{"updatedTime":1653013947000,"contributors":[{"name":"king","email":"836334258@qq.com","commits":1}]},"filePathRelative":"code/README.md"}');export{t as data};

@@ -1,0 +1,1 @@
+import{_ as n,o as t,c as o,a as e}from"./app.fc8d2037.js";const c={},s=e("p",null,[e("strong",null,"大家好，很高兴能看到 King 的随笔 以后我会在这里分享我的感悟和心得的")],-1),_=[s];function l(r,a){return t(),o("div",null,_)}const d=n(c,[["render",l],["__file","index.html.vue"]]);export{d as default};

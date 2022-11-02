@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-be0632da","path":"/code/algorithm.html","title":"算法","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"快速排序","slug":"快速排序","link":"#快速排序","children":[]}],"git":{"updatedTime":1666764546000,"contributors":[{"name":"king","email":"836334258@qq.com","commits":1}]},"filePathRelative":"code/algorithm.md"}');export{e as data};
